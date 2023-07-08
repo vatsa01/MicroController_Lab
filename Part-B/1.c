@@ -1,18 +1,17 @@
-#include<stdio.h>
 #include<LPC214X.h>
-void delay(int);
+void delay(int n)
+{int i;
+for(i=0;i<n;i++);
+}
 int main()
 {
-IODIR0 = 0x00000001;
-while(1){
-IOSET0 = 0x00000001;
-delay(500);
-IOCLR0 = 0x00000001;
-delay(500);
+	IODIR0=0x00000001;
+	while(1)
+	{
+	IOSET0=0x00000001;
+	delay(500);
+	IOCLR0=0x00000001;
+	delay(500);
+	}
 }
-}
-void delay(int n)
-{
-inti =0;
-for(i = 0;i<n;i++);
-}
+	
